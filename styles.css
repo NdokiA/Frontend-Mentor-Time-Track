@@ -135,5 +135,75 @@ ul{
     font-size: 18px;
     color: white;
 }
-/*Work*/
 
+/*Page*/
+.page-work{
+    background-color: var(--work);
+}
+.page-work::after{
+    background-image: url(images/icon-work.svg);
+}
+.page-play{
+    background-color: var(--play);
+}
+.page-play::after{
+    background-image: url(images/icon-play.svg);
+}
+.page-study{
+    background-color: var(--study);
+}
+.page-study::after{
+    background-image: url(images/icon-study.svg);
+}
+.page-exercise{
+    background-color: var(--exercise);
+}
+.page-exercise::after{
+    background-image: url(images/icon-exercise.svg);
+}
+.page-social{
+    background-color: var(--social);
+}
+.page-social::after{
+    background-image: url(images/icon-social.svg);
+}
+.page-self-care{
+    background-color: var(--self--care);
+}
+.page-self-care::after{
+    background-image: url(images/icon-self-care.svg);
+}
+div[class*="page"] {
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    padding-top: 4rem;
+    z-index: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+  
+div[class*="page"]::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: var(--dark-blue);
+
+    bottom: 0px;
+    left: 0px;
+    height: 75%;
+    width: 100%;
+    border-radius: inherit;
+}
+
+div[class*="page"]::after{
+    content: '';
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: absolute;    
+    top: -5px;
+    left: -20px;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+}
