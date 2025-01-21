@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+:root{
+--profile: hsl(246, 80%, 60%);
+--work: hsl(15, 100%, 70%);
+--play: hsl(195, 74%, 62%);
+--study: hsl(348, 100%, 68%);
+--exercise: hsl(145, 58%, 55%);
+--social: hsl(264, 64%, 52%);
+--self--care: hsl(43, 84%, 65%);
+
+--very-dark-blue: hsl(226, 43%, 10%);
+--dark-blue: hsl(235, 46%, 20%);
+--desaturated-blue: hsl(235, 45%, 61%);
+--pale-blue: hsl(236, 100%, 87%);
+}
+
+body{
+    background-color: white;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--very-dark-blue);
+    font-family: 'Rubik';
+    font-size: 18px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-block: 4rem;
+}
+
+button{
+    color: var(--desaturated-blue);
+    background-color: transparent;
+    font-size: 17px;
+    border: none
+}
+
+button:hover{
+    color: white;
+}
+
+/* Profile */
+.profile-box{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    color: white;
+    background-color: var(--dark-blue);
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 0;
+}
+
+.profile-box::before{
+    position: absolute;
+    content: '';
+    z-index: -1;
+    background-color: var(--profile);
+
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    height: 60%;
+    width: 100%;
+}
+
+.profile{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-inline: 1rem;
+}
+
+
+.profile img{
+    --pw: 60px;
+    width: var(--pw);
+    height: var(--pw);
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile span{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--pale-blue);
+}
+
+/*----------------------------*/
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
+
+.head h1{
+    font-size: 18px;
+    color: white;
+}
+
+.head img{
+    height: 7px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info p{
+    font-size: 14px;
+    color: var(--pale-blue);
+}
+
+#current{
+    font-size: 18px;
+    color: white;
+}
+/*Work*/
+
