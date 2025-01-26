@@ -47,6 +47,10 @@ button:hover{
     color: white;
 }
 
+.active{
+    color: white;
+}
+
 /* Profile */
 .profile-box{
     display: flex;
@@ -97,6 +101,7 @@ ul{
     justify-content: space-between;
     align-items: center;
 }
+
 .profile span{
     font-size: 14px;
     font-weight: 500;
@@ -104,15 +109,53 @@ ul{
 }
 
 /*----------------------------*/
+
+
+div[class*="page"] {
+    padding-inline: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    padding-block: 3rem 2rem;
+    z-index: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+  
+div[class*="page"]::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: var(--dark-blue);
+
+    bottom: 0px;
+    left: 0px;
+    height: 75%;
+    width: 100%;
+    border-radius: inherit;
+}
+
+div[class*="page"]::after{
+    content: '';
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: absolute;    
+    top: -5px;
+    left: -20px;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+}
+
 .head{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 0.5rem;
+    padding-block: 0.5rem 1rem;
 }
 
 .head h1{
     font-size: 18px;
+    font-weight: 500;
     color: white;
 }
 
@@ -126,6 +169,9 @@ ul{
     align-items: center;
 }
 
+.info #current{
+    font-size: 30px;
+}
 .info p{
     font-size: 14px;
     color: var(--pale-blue);
@@ -173,37 +219,79 @@ ul{
 .page-self-care::after{
     background-image: url(images/icon-self-care.svg);
 }
-div[class*="page"] {
-    padding: 2rem;
-    border-radius: 1rem;
-    position: relative;
-    padding-top: 4rem;
-    z-index: 0;
-    overflow-y: hidden;
-    overflow-x: auto;
-}
-  
-div[class*="page"]::before{
-    content: '';
-    position: absolute;
-    z-index: -1;
-    background-color: var(--dark-blue);
 
-    bottom: 0px;
-    left: 0px;
-    height: 75%;
-    width: 100%;
-    border-radius: inherit;
-}
+@media (min-width: 768px){
+    main{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
 
-div[class*="page"]::after{
-    content: '';
-    background-repeat: no-repeat;
-    background-position: top right;
-    position: absolute;    
-    top: -5px;
-    left: -20px;
-    height: 100%;
-    width: 100%;
-    z-index: -2;
+        grid-template-areas: 
+        'profile work play study'
+        'profile exercise social self-care';
+        gap: 0.5rem;
+    }
+
+    .profile-box{
+        grid-area: profile;
+        padding-top: 2rem;
+        max-width: 15rem;
+    }
+    .profile{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-inline: 0;
+    }
+    ul{
+        padding-top: 3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+
+    /*----------------*/
+
+    div[class*="page"]{
+        padding-top: 4rem;
+        max-width: 15rem;
+    }
+
+    .info{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .head{
+        padding-bottom: 0;
+    }
+    
+    .info #current{
+        font-size: 40px;
+    }
+    .profile p{
+        font-size: 30px;
+    }
+    .page-work{
+        grid-area: work;
+    }
+    .page-play{
+        grid-area: play;
+    }
+    .page-study{
+        grid-area: study;
+    }
+    .page-exercise{
+        grid-area: exercise;
+    }
+    .page-social{
+        grid-area: social;
+    }
+    .page-self-care{
+        grid-area: self-care;
+    }
+
 }
